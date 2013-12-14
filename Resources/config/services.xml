@@ -1,20 +1,19 @@
 <?xml version="1.0" ?>
 
 <container xmlns="http://symfony.com/schema/dic/services"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
-
-    <!--
-    <parameters>
-        <parameter key="esoc_hashing.example.class">ESO\CHashingBundle\Example</parameter>
-    </parameters>
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
 
     <services>
-        <service id="esoc_hashing.example" class="%esoc_hashing.example.class%">
-            <argument type="service" id="service_id" />
-            <argument>plain_value</argument>
-            <argument>%parameter_name%</argument>
+
+        <service id="chashing.hasher.crc32" class="ESO\CHashingBundle\Hasher\Crc32" />
+
+        <service id="chashing.hasher.md5" class="ESO\CHashingBundle\Hasher\Md5" />
+
+        <service id="chashing.hasher.parametrizedhasher.sha256" class="ESO\CHashingBundle\Hasher\ParametrizedHasher">
+            <argument>sha256</argument>
         </service>
+
     </services>
-    -->
+
 </container>
